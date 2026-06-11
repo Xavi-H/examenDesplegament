@@ -37,25 +37,13 @@ Aixeca tots els serveis en segon pla:
 docker compose up -d
 
 
-Docker Compose fusiona automàticament `docker-compose.yml` i `docker-compose.override.yml`. Això construeix la imatge localment i activa el bind mount de `./src`.
+Docker Compose fusiona automàticament docker-compose.yml i docker-compose.override.yml. Això construeix la imatge localment i activa el bind mount de ./src.
 
 
 Accedeix a l'aplicació:
-- Des d'un terminal local: `http://localhost:8080`
+- Des d'un terminal local: http://localhost:8080
 - Des d'un Codespace: obre la pestanya **Ports** i clica l'enllaç del port 8080
 
-
-### 4. Primer ús — inicialització de la base de dades
-
-La base de dades s'inicialitza automàticament la primera vegada que arrenca el contenidor `db`, a partir del fitxer `db/init.sql`. No cal cap pas manual.
-
-> Si necessites reinicialitzar (esborrar totes les dades i tornar a crear les taules):
-> ```bash
-> docker compose down -v
-> docker compose up -d
-> ```
-
----
 
 ## Verificació que funciona correctament
 
@@ -63,20 +51,4 @@ La base de dades s'inicialitza automàticament la primera vegada que arrenca el 
 
 docker compose ps
 
-Resultat esperat: els dos contenidors (`web` i `db`) han d'estar en estat `Up`.
-
-### Verificar l'aplicació web
-
-Obre al navegador:
-- **Desenvolupament:** `http://localhost:8080`
-- **Producció:** `http://<IP-EC2>`
-
-L'aplicació ha de mostrar el formulari per afegir tasques i la llista de tasques de la base de dades.
-
-### Verificar el pipeline CI/CD
-
-A GitHub, a la pestanya **Actions**, el workflow *Desplegament a EC2* ha d'aparèixer amb un tick verd després de cada push a `main`.
-
----
-
-## Estructura del repositori
+Resultat esperat: els dos contenidors (web i db) han d'estar en estat Up.
