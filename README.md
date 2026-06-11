@@ -65,14 +65,6 @@ docker compose ps
 
 Resultat esperat: els dos contenidors (`web` i `db`) han d'estar en estat `Up`.
 
-### Verificar la base de dades
-
-```bash
-docker compose exec db mysql -u taskuser -ptaskpass taskmanager -e "SHOW TABLES; SELECT * FROM tasques;"
-```
-
-Ha de mostrar la taula `tasques` amb les dades inicials carregades.
-
 ### Verificar l'aplicació web
 
 Obre al navegador:
